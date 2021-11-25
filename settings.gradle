@@ -1,0 +1,5 @@
+rootProject.name = "GameOfWords"
+include ':core'
+include ':business'
+include ':data'
+include ':app'

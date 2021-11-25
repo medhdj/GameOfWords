@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GameOfWords!</string>
+    <string name="generic_error_message">Sorry ! Something has gone wrong</string>
+    <string name="generic_empty_message">No results Found :( </string>
+</resources>
