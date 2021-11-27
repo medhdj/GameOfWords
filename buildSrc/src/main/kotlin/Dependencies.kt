@@ -38,10 +38,6 @@ object Libraries {
 
         const val hilt = BuildPlugins.Versions.hilt
 
-        const val retrofit = "2.9.0"
-        const val okhttp = "4.7.2"
-        const val gson = "2.8.9"
-
         const val appCompat = "1.3.1"
         const val materialDesign = "1.4.0"
         const val constraintLayout = "2.1.1"
@@ -49,11 +45,7 @@ object Libraries {
         const val lifeCycle = "2.3.1"
         const val fragmentKtx = "1.3.6"
         const val paging = "3.0.1"
-        const val glide = "4.12.0"
 
-        const val exoplayer = "2.16.0"
-
-        const val jodaTime = "2.10.13"
         const val timber = "4.7.1"
     }
 
@@ -70,13 +62,6 @@ object Libraries {
     const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
     const val hiltCompiler = "com.google.dagger:hilt-compiler:${Versions.hilt}"
 
-    // Network
-    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
-    const val retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
-    const val gson = "com.google.code.gson:gson:${Versions.gson}"
-    const val okHttp = "com.squareup.okhttp3:okhttp:${Versions.okhttp}"
-    const val okHttpLogging = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp}"
-
     // UI
     const val appcompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     const val materialDesign = "com.google.android.material:material:${Versions.materialDesign}"
@@ -92,13 +77,8 @@ object Libraries {
     const val paging = "androidx.paging:paging-runtime-ktx:${Versions.paging}"
     const val pagingCommon = "androidx.paging:paging-common:${Versions.paging}"
 
-    const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
-
-
-
     // utils
     const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
-    const val jodaTime = "joda-time:joda-time:${Versions.jodaTime}"
 }
 
 object TestLibraries {

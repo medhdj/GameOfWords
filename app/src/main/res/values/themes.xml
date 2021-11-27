@@ -25,10 +25,5 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.Gow.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-        <item name="android:editTextColor">@android:color/white</item>
-        <item name="android:textColorHint">@android:color/white</item>
-    </style>
-
     <style name="Theme.Gow.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

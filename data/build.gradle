@@ -9,8 +9,6 @@ android {
     defaultConfig {
         minSdk AndroidSdk.minSdk
         targetSdk AndroidSdk.targetSdk
-        versionCode AndroidApplication.versionCode
-        versionName AndroidApplication.versionName
 
         testInstrumentationRunner AndroidApplication.testRunner
 
@@ -48,9 +46,6 @@ dependencies {
     implementation project(':business')
 
     implementation Libraries.kotlinCoreKtx
-
-    implementation Libraries.retrofit
-    implementation Libraries.gson
 
     implementation Libraries.paging
 

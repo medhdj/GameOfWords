@@ -10,10 +10,6 @@ android {
     defaultConfig {
         minSdk AndroidSdk.minSdk
         targetSdk AndroidSdk.targetSdk
-        versionCode AndroidApplication.versionCode
-        versionName AndroidApplication.versionName
-
-        testInstrumentationRunner AndroidApplication.testRunner
 
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
@@ -50,10 +46,7 @@ dependencies {
     implementation Libraries.liveDataKtx
     implementation Libraries.lifeCycleCommon
 
-    implementation Libraries.glide
-
     implementation Libraries.timber
-    implementation Libraries.jodaTime
 
     testImplementation TestLibraries.junit
     testImplementation TestLibraries.kluent

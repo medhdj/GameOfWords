@@ -1,0 +1,1 @@
+# i'm here in case you want to use me as standalone library

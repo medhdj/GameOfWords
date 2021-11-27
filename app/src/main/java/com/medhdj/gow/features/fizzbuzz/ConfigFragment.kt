@@ -11,6 +11,7 @@ import com.medhdj.gow.BuildConfig
 import com.medhdj.gow.databinding.FragmentConfigBinding
 import dagger.hilt.android.AndroidEntryPoint
 
+
 @AndroidEntryPoint
 class ConfigFragment : Fragment() {
     private var _binding: FragmentConfigBinding? = null
@@ -44,6 +45,7 @@ class ConfigFragment : Fragment() {
                     fizzWord = fizzWord.editText.asString(),
                     buzzWord = buzzWord.editText.asString()
                 )
+
                 findNavController().navigate(directions)
             }
         }
