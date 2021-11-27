@@ -2,4 +2,12 @@
     <string name="app_name">GameOfWords!</string>
     <string name="generic_error_message">Sorry ! Something has gone wrong</string>
     <string name="generic_empty_message">No results Found :( </string>
+
+    <string name="challenge_message">Let\'s define the rules of our challenge 💪</string>
+    <string name="fizz_number_hint">Fizz number</string>
+    <string name="buzz_number_hint">Buzz number</string>
+    <string name="range_limit_hint">Limit</string>
+    <string name="range_limit_message">I have no limits 😤 </string>
+    <string name="fizzbuzz_replacement_message">Choose your words wisely !</string>
+    <string name="fizz_word_hint">Fizz word</string>
 </resources>

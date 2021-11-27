@@ -12,7 +12,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.GameOfWords">
+        android:theme="@style/Theme.Gow">
+
+        <activity
+            android:name="com.medhdj.gow.features.main.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Gow.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="@dimen/spacing_m">
+
+    <TextView
+        android:id="@+id/rangeChallengeTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/challenge_message"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fizzNumber"
+        style="@style/Styles.Gow.FormInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_s"
+        android:layout_marginEnd="@dimen/spacing_xxs"
+        android:hint="@string/fizz_number_hint"
+        app:layout_constraintEnd_toStartOf="@id/buzzNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rangeChallengeTxt">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_xl"
+            android:inputType="number"
+            android:nextFocusForward="@id/buzzNumber" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/buzzNumber"
+        style="@style/Styles.Gow.FormInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_xxs"
+        android:hint="@string/buzz_number_hint"
+        android:nextFocusForward="@id/limitNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/fizzNumber"
+        app:layout_constraintTop_toTopOf="@id/fizzNumber">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_xl"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/rangeLimitTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_m"
+        android:gravity="center"
+        android:text="@string/range_limit_message"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fizzNumber" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/limitNumber"
+        style="@style/Styles.Gow.FormInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/spacing_xl"
+        android:layout_marginTop="@dimen/spacing_m"
+        android:hint="@string/range_limit_hint"
+        android:nextFocusForward="@id/fizzWord"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rangeLimitTxt">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_xl"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/fizzbuzzReplacementTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_m"
+        android:text="@string/fizzbuzz_replacement_message"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/limitNumber" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fizzWord"
+        style="@style/Styles.Gow.FormInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_s"
+        android:layout_marginEnd="@dimen/spacing_xxs"
+        android:hint="@string/fizz_word_hint"
+        android:nextFocusForward="@id/buzzWord"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
+        app:layout_constraintEnd_toStartOf="@id/buzzWord"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fizzbuzzReplacementTxt">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_xl"
+            android:inputType="text"
+            android:maxLength="10" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/buzzWord"
+        style="@style/Styles.Gow.FormInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_xxs"
+        android:hint="@string/buzz_number_hint"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/fizzWord"
+        app:layout_constraintTop_toTopOf="@id/fizzWord">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_xl"
+            android:inputType="text"
+            android:maxLength="10" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/goBtn"
+        android:layout_width="@dimen/spacing_xxl"
+        android:layout_height="@dimen/spacing_xxl"
+        android:layout_marginBottom="@dimen/spacing_m"
+        android:insetLeft="@dimen/spacing_none"
+        android:insetTop="@dimen/spacing_none"
+        android:insetRight="@dimen/spacing_none"
+        android:insetBottom="@dimen/spacing_none"
+        app:icon="@drawable/ic_go"
+        app:iconPadding="@dimen/spacing_none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:shapeAppearanceOverlay="@style/Styles.ShapeAppearanceOverlay.RoundedButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

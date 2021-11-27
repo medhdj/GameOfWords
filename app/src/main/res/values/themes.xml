@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     
-    <style name="Theme.GameOfWords" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Gow" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/orange_base</item>
         <item name="colorPrimaryVariant">@color/orange_dark</item>
@@ -20,15 +20,15 @@
 
     </style>
 
-    <style name="Theme.GameOfWords.NoActionBar" parent="Theme.GameOfWords">
+    <style name="Theme.Gow.NoActionBar" parent="Theme.Gow">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.GameOfWords.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+    <style name="Theme.Gow.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="android:editTextColor">@android:color/white</item>
         <item name="android:textColorHint">@android:color/white</item>
     </style>
 
-    <style name="Theme.GameOfWords.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.Gow.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
