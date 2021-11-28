@@ -1,15 +1,19 @@
 package com.medhdj.data.fizzbuzz
 
+import androidx.annotation.VisibleForTesting
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class FizzBuzzFeedDataSource : PagingSource<Long, String>() {
+class FizzBuzzFeedDataSource(
+    private val dispatchProvider: () -> CoroutineDispatcher = { Dispatchers.Default }
+) : PagingSource<Long, String>() {
     lateinit var fizzBuzzConfig: FizzBuzzConfig
 
     override suspend fun load(params: LoadParams<Long>): LoadResult<Long, String> {
-        return withContext(Dispatchers.Default) {
+        return withContext(dispatchProvider.invoke()) {
             try {
                 val rangeStart = params.key ?: DEFAULT_RANGE_START
                 val rangeEnd = rangeStart + params.loadSize
@@ -38,26 +42,35 @@ class FizzBuzzFeedDataSource : PagingSource<Long, String>() {
         }
     }
 
-    private fun calculateKeys(
+    override fun getRefreshKey(state: PagingState<Long, String>): Long? {
+        return state.anchorPosition?.let { anchorPosition ->
+            state.closestPageToPosition(anchorPosition)?.prevKey
+                ?: state.closestPageToPosition(anchorPosition)?.nextKey
+        }
+    }
+
+    @VisibleForTesting
+    fun calculateKeys(
         rangeStart: Long,
         rangeEnd: Long,
         loadSize: Int,
-        result: List<String>
+        fizzBuzzList: List<String>
     ): Pair<Long?, Long?> {
         val prevKey = (rangeStart - loadSize - 1).let {
-            if (it <= DEFAULT_RANGE_START) null
+            if (it < DEFAULT_RANGE_START) null
             else {
                 it
             }
         }
 
         val nextKey =
-            if (result.isNotEmpty() && rangeEnd < fizzBuzzConfig.rangeLimit) rangeEnd + 1 else null
+            if (fizzBuzzList.isNotEmpty() && rangeEnd < fizzBuzzConfig.rangeLimit) rangeEnd + 1 else null
 
         return Pair(prevKey, nextKey)
     }
 
-    private fun generateFizzBuzzData(from: Long, to: Long): List<String> =
+    @VisibleForTesting
+    fun generateFizzBuzzData(from: Long, to: Long): List<String> =
         kotlin.runCatching {
             check(from < to)
             check(from < Long.MAX_VALUE && to <= Long.MAX_VALUE)
@@ -83,13 +96,6 @@ class FizzBuzzFeedDataSource : PagingSource<Long, String>() {
             result
         }.getOrDefault(emptyList())
 
-
-    override fun getRefreshKey(state: PagingState<Long, String>): Long? {
-        return state.anchorPosition?.let { anchorPosition ->
-            state.closestPageToPosition(anchorPosition)?.prevKey
-                ?: state.closestPageToPosition(anchorPosition)?.nextKey
-        }
-    }
 
     data class FizzBuzzConfig(
         val fizzNumber: Long,
