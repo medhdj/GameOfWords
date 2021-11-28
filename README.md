@@ -6,6 +6,10 @@ Sample project, that implement's a simple fizzbuzz game
 | <img src="https://github.com/medhdj/GameOfWords/blob/main/docs/config_screen.jpg?raw=true" width="300" style="inline"> | <img src="https://github.com/medhdj/GameOfWords/blob/main/docs/result_screen.jpg?raw=true" width="300" style="inline"> |
 
 
+#### How to play
+- Fill in the desired configuration and click on "GO" button to see the result
+> Long click on the "GO" button to fill in automatically the form with default fizzbuzz config
+
 ## Project architecture
 The choice of the architecture implemented in this project is based on my previous experiences on different types of projects, I mixed concepts of clean architecture and modularization to make the exploration and understanding of the code as easy as possible, also giving the possibility to extend and evolve the project beyond the constraint of a specific platform.
 With this architecture and the help of  Kotlin KMM, we can easily migrate and share all our business logic and  the data sources between iOS and Android.
